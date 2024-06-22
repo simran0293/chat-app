@@ -9,7 +9,7 @@ const {app,server} = require('./socket/index')
 // const app=express();
 
 app.use(cors({
-    origin: 'http://localhost:3000', // Allow requests from this origin
+    origin: 'https://chatapp-three-nu.vercel.app', // Allow requests from this origin
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
     allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
     credentials: true // Allow credentials (cookies, authorization headers)
