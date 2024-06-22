@@ -18,6 +18,12 @@ const messageSchema= new mongoose.Schema({
     seen: {
         type: Boolean,
         default: false
+    },
+    msgByUserId:{
+        type: mongoose.Schema.ObjectId,
+        required : true,
+        ref : 'User'
+
     }
 },{timestamps : true})
 
@@ -43,8 +49,8 @@ const conversationSchema = new mongoose.Schema(
     },{timestamps:true });
 
     //converting the scema into a model for a more modular and structured approach
-    const ConversationModel = mongoose.Model('Conversation',conversationSchema);
-    const MessageModel = mongoose.Model('Message',messageSchema);
+    const ConversationModel = mongoose.model('Conversation',conversationSchema);
+    const MessageModel = mongoose.model('Message',messageSchema);
 
     //making object to export both the models
     module.exports = {
